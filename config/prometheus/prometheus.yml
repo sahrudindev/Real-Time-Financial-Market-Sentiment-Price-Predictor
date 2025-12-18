@@ -1,0 +1,51 @@
+# Prometheus Configuration
+# Scrape configs for MLOps infrastructure monitoring
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # PostgreSQL metrics (via postgres_exporter - optional)
+  - job_name: 'postgresql'
+    static_configs:
+      - targets: ['postgres:5432']
+    metrics_path: /metrics
+    # Note: Requires postgres_exporter sidecar for actual metrics
+
+  # MinIO metrics
+  - job_name: 'minio'
+    metrics_path: /minio/v2/metrics/cluster
+    scheme: http
+    static_configs:
+      - targets: ['minio:9000']
+
+  # Redpanda metrics
+  - job_name: 'redpanda'
+    static_configs:
+      - targets: ['redpanda:9644']
+
+  # Airflow metrics (StatsD exporter)
+  - job_name: 'airflow'
+    static_configs:
+      - targets: ['airflow-webserver:8080']
+    metrics_path: /health
+    # Note: For full metrics, configure Airflow StatsD exporter
+
+  # MLflow (basic health check)
+  - job_name: 'mlflow'
+    static_configs:
+      - targets: ['mlflow:5000']
+    metrics_path: /health
+
+  # FastAPI model serving
+  - job_name: 'model-api'
+    static_configs:
+      - targets: ['model-api:8000']
+    metrics_path: /metrics
+    scrape_interval: 15s

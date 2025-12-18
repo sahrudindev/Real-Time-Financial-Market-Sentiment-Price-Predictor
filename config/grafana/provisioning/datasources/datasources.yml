@@ -1,0 +1,24 @@
+# Grafana Datasource Provisioning
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false
+
+  - name: PostgreSQL
+    type: postgres
+    url: postgres:5432
+    database: mlops_warehouse
+    user: mlops_user
+    secureJsonData:
+      password: mlops_secure_password_123
+    jsonData:
+      sslmode: disable
+      maxOpenConns: 10
+      maxIdleConns: 10
+      connMaxLifetime: 14400
+    editable: false

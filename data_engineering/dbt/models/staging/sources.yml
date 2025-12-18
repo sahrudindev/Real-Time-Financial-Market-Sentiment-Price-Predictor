@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: warehouse
+    tables:
+      - name: raw_market_data
+        description: "Raw market data from Redpanda ingestion"
+        columns:
+          - name: id
+            description: "Auto-increment primary key"
+          - name: event_timestamp
+            description: "Timestamp of the market data event"
+          - name: symbol
+            description: "Trading pair symbol (e.g., BTC/USD)"
+          - name: price
+            description: "Current price in USD"
+          - name: volume_24h
+            description: "24-hour trading volume"
+          - name: headline
+            description: "Associated news headline"

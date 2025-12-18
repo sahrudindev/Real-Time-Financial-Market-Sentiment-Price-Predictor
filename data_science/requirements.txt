@@ -1,0 +1,31 @@
+# Data Science - Training Dependencies
+
+# Core ML
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# XGBoost
+xgboost>=2.0.0
+
+# MLflow
+mlflow>=2.9.0
+
+# Database
+psycopg2-binary>=2.9.9
+sqlalchemy>=2.0.0
+
+# Visualization (for notebooks)
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# Type hints
+pydantic>=2.5.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.26.0

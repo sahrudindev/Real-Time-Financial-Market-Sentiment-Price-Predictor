@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_market_data
+    description: "Cleaned and deduplicated market data"
+    columns:
+      - name: id
+        description: "Source record ID"
+      - name: event_timestamp
+        description: "Timestamp of the market event"
+        tests:
+          - not_null
+      - name: symbol
+        description: "Trading pair symbol"
+        tests:
+          - not_null
+      - name: price
+        description: "Price in USD"
+        tests:
+          - not_null
+
+  - name: fct_market_features
+    description: "Feature-engineered market data for ML training"
+    columns:
+      - name: id
+        description: "Source record ID"
+      - name: event_timestamp
+        description: "Timestamp of the event"
+      - name: price
+        description: "Current price"
+      - name: sma_10
+        description: "10-period Simple Moving Average"
+      - name: sma_50
+        description: "50-period Simple Moving Average"
+      - name: rsi_14
+        description: "14-period Relative Strength Index (0-100)"
+      - name: sentiment_score
+        description: "Keyword-based sentiment (-1 to 1)"
+      - name: target_price_1h
+        description: "Price 1 hour ahead (prediction target)"

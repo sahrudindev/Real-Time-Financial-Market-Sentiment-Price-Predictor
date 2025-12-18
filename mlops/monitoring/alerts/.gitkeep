@@ -1,0 +1,9 @@
+# Prometheus Alert Rules
+
+Alert rule files for critical system events.
+
+## Alert Categories
+
+- `service_health.yml` - Service availability alerts
+- `data_quality.yml` - Data pipeline alerts
+- `model_drift.yml` - Model degradation alerts

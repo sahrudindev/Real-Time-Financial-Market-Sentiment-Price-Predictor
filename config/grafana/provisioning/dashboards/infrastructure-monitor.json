@@ -1,0 +1,539 @@
+{
+    "id": null,
+    "uid": "mlops-working",
+    "title": "MLOps Infrastructure Monitor",
+    "tags": [
+        "mlops",
+        "infrastructure",
+        "monitoring"
+    ],
+    "timezone": "browser",
+    "schemaVersion": 39,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+        {
+            "id": 1,
+            "title": "Prometheus Up",
+            "type": "stat",
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 0
+            },
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
+            "targets": [
+                {
+                    "expr": "up{job=\"prometheus\"}",
+                    "legendFormat": "Prometheus",
+                    "refId": "A"
+                }
+            ],
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "reduceOptions": {
+                    "values": false,
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": ""
+                }
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [
+                        {
+                            "type": "value",
+                            "options": {
+                                "0": {
+                                    "text": "DOWN",
+                                    "color": "red"
+                                }
+                            }
+                        },
+                        {
+                            "type": "value",
+                            "options": {
+                                "1": {
+                                    "text": "UP",
+                                    "color": "green"
+                                }
+                            }
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "id": 2,
+            "title": "MinIO Up",
+            "type": "stat",
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 4,
+                "y": 0
+            },
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
+            "targets": [
+                {
+                    "expr": "up{job=\"minio\"}",
+                    "legendFormat": "MinIO",
+                    "refId": "A"
+                }
+            ],
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "reduceOptions": {
+                    "values": false,
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": ""
+                }
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [
+                        {
+                            "type": "value",
+                            "options": {
+                                "0": {
+                                    "text": "DOWN",
+                                    "color": "red"
+                                }
+                            }
+                        },
+                        {
+                            "type": "value",
+                            "options": {
+                                "1": {
+                                    "text": "UP",
+                                    "color": "green"
+                                }
+                            }
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "id": 3,
+            "title": "Airflow Up",
+            "type": "stat",
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 8,
+                "y": 0
+            },
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
+            "targets": [
+                {
+                    "expr": "up{job=\"airflow\"}",
+                    "legendFormat": "Airflow",
+                    "refId": "A"
+                }
+            ],
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "reduceOptions": {
+                    "values": false,
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": ""
+                }
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [
+                        {
+                            "type": "value",
+                            "options": {
+                                "0": {
+                                    "text": "DOWN",
+                                    "color": "red"
+                                }
+                            }
+                        },
+                        {
+                            "type": "value",
+                            "options": {
+                                "1": {
+                                    "text": "UP",
+                                    "color": "green"
+                                }
+                            }
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "id": 4,
+            "title": "Redpanda Up",
+            "type": "stat",
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 12,
+                "y": 0
+            },
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
+            "targets": [
+                {
+                    "expr": "up{job=\"redpanda\"}",
+                    "legendFormat": "Redpanda",
+                    "refId": "A"
+                }
+            ],
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "reduceOptions": {
+                    "values": false,
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": ""
+                }
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [
+                        {
+                            "type": "value",
+                            "options": {
+                                "0": {
+                                    "text": "DOWN",
+                                    "color": "red"
+                                }
+                            }
+                        },
+                        {
+                            "type": "value",
+                            "options": {
+                                "1": {
+                                    "text": "UP",
+                                    "color": "green"
+                                }
+                            }
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "id": 5,
+            "title": "Model API Up",
+            "type": "stat",
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 16,
+                "y": 0
+            },
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
+            "targets": [
+                {
+                    "expr": "up{job=\"model-api\"}",
+                    "legendFormat": "Model API",
+                    "refId": "A"
+                }
+            ],
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "reduceOptions": {
+                    "values": false,
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": ""
+                }
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [
+                        {
+                            "type": "value",
+                            "options": {
+                                "0": {
+                                    "text": "DOWN",
+                                    "color": "red"
+                                }
+                            }
+                        },
+                        {
+                            "type": "value",
+                            "options": {
+                                "1": {
+                                    "text": "UP",
+                                    "color": "green"
+                                }
+                            }
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "id": 6,
+            "title": "Total Services Up",
+            "type": "stat",
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 20,
+                "y": 0
+            },
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
+            "targets": [
+                {
+                    "expr": "count(up == 1)",
+                    "legendFormat": "Services",
+                    "refId": "A"
+                }
+            ],
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "center",
+                "reduceOptions": {
+                    "values": false,
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": ""
+                }
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 3
+                            },
+                            {
+                                "color": "green",
+                                "value": 5
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "id": 7,
+            "title": "Service Uptime History",
+            "type": "timeseries",
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 4
+            },
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
+            "targets": [
+                {
+                    "expr": "up",
+                    "legendFormat": "{{job}}",
+                    "refId": "A"
+                }
+            ],
+            "options": {
+                "legend": {
+                    "displayMode": "list",
+                    "placement": "bottom"
+                }
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {
+                        "drawStyle": "line",
+                        "lineInterpolation": "stepAfter",
+                        "fillOpacity": 20,
+                        "lineWidth": 2
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "id": 8,
+            "title": "Prometheus Scrape Duration",
+            "type": "timeseries",
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 4
+            },
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
+            "targets": [
+                {
+                    "expr": "scrape_duration_seconds",
+                    "legendFormat": "{{job}}",
+                    "refId": "A"
+                }
+            ],
+            "options": {
+                "legend": {
+                    "displayMode": "list",
+                    "placement": "bottom"
+                }
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {
+                        "drawStyle": "line",
+                        "lineInterpolation": "smooth",
+                        "fillOpacity": 10,
+                        "lineWidth": 1
+                    },
+                    "unit": "s"
+                }
+            }
+        },
+        {
+            "id": 9,
+            "title": "Infrastructure Overview",
+            "type": "text",
+            "gridPos": {
+                "h": 6,
+                "w": 24,
+                "x": 0,
+                "y": 12
+            },
+            "options": {
+                "content": "# 🚀 Real-Time Financial Market Sentiment & Price Predictor\n\n## Services Architecture\n\n| Service | Description | Port |\n|---------|-------------|------|\n| **Redpanda** | Kafka-compatible streaming | 19092 |\n| **PostgreSQL** | Data warehouse | 5433 |\n| **MinIO** | S3-compatible storage | 9001 |\n| **Airflow** | Workflow orchestration | 8081 |\n| **MLflow** | ML experiment tracking | 5000 |\n| **Model API** | FastAPI predictions | 8000 |\n| **Prometheus** | Metrics collection | 9095 |\n| **Grafana** | Visualization | 3000 |\n\n### Active Data Pipeline\n- 📡 Crypto price data streaming every 10 seconds\n- 📦 3 MinIO buckets: raw-data, processed-data, mlflow-artifacts\n- 🔄 2 Airflow DAGs ready: dbt + retrain_pipeline",
+                "mode": "markdown"
+            }
+        }
+    ],
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "templating": {
+        "list": []
+    },
+    "annotations": {
+        "list": []
+    }
+}

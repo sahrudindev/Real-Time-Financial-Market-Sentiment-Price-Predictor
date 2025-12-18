@@ -1,0 +1,9 @@
+# Grafana Dashboards
+
+Dashboard JSON files for import into Grafana.
+
+## Available Dashboards
+
+- `infrastructure_overview.json` - Service health and resource usage
+- `data_pipeline_metrics.json` - ETL job metrics
+- `model_performance.json` - Inference latency and accuracy

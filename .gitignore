@@ -1,0 +1,44 @@
+# Project-specific
+.env
+*.pyc
+__pycache__/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_metadata/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Docker volumes (local data)
+volumes/
+data/postgres/
+data/minio/
+data/mlflow/
+logs/
+
+# dbt
+dbt_packages/
+dbt_modules/
+target/
+
+# MLflow artifacts (local)
+mlruns/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.pem
+*.key
+credentials/
